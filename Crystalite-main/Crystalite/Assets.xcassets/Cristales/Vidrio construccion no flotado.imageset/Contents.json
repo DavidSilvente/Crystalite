@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "cristal_no_procesado.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21G115" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="AyudaEntity" representedClassName="AyudaEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="pregunta" optional="YES" attributeType="String"/>
+        <attribute name="respuesta" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="CristalEntity" representedClassName="CristalEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="descripcion" optional="YES" attributeType="String"/>
+        <attribute name="nombre" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="ElementoEntity" representedClassName="ElementoEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="descripcion" optional="YES" attributeType="String"/>
+        <attribute name="iniciales" optional="YES" attributeType="String"/>
+        <attribute name="nombre" optional="YES" attributeType="String"/>
+        <attribute name="valor" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="EnsayoEntity" representedClassName="EnsayoEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="al" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="ba" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="ca" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="creador" optional="YES" attributeType="String"/>
+        <attribute name="enProceso" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="fecha" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="ir" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="k" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="mg" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="nombre" optional="YES" attributeType="String"/>
+        <attribute name="resultCristal" optional="YES" attributeType="String"/>
+        <relationship name="cristalRelation" optional="YES" maxCount="1" deletionRule="Deny" destinationEntity="CristalEntity"/>
+        <relationship name="elementoRelation" optional="YES" toMany="YES" minCount="6" maxCount="6" deletionRule="Nullify" destinationEntity="ElementoEntity"/>
+        <relationship name="personaRelation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PersonaEntity" inverseName="ensayoRelation" inverseEntity="PersonaEntity"/>
+    </entity>
+    <entity name="PersonaEntity" representedClassName="PersonaEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="admin" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="contrasena" optional="YES" attributeType="String"/>
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="foto" optional="YES" attributeType="Binary"/>
+        <attribute name="nombre" optional="YES" attributeType="String"/>
+        <relationship name="ensayoRelation" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EnsayoEntity" inverseName="personaRelation" inverseEntity="EnsayoEntity"/>
+    </entity>
+    <elements>
+        <element name="AyudaEntity" positionX="-45" positionY="54" width="128" height="59"/>
+        <element name="CristalEntity" positionX="-36" positionY="54" width="128" height="59"/>
+        <element name="ElementoEntity" positionX="-18" positionY="63" width="128" height="89"/>
+        <element name="EnsayoEntity" positionX="-54" positionY="-9" width="128" height="239"/>
+        <element name="PersonaEntity" positionX="-63" positionY="-18" width="128" height="119"/>
+    </elements>
+</model>
